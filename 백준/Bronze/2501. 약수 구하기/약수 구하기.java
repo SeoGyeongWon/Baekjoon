@@ -1,25 +1,20 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-        sc.close();
+        int n = sc.nextInt(), k = sc.nextInt(), count =0;
         
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        for(int i = 1; i<=n; i++){
+        for(int i =1; i<=n; i++){
             if(n%i==0){
-                list.add(i);
+                count++;
+                if(count == k){
+                    System.out.println(i);
+                    return;
+                }
             }
         }
-        if(list.size()>=k){
-            System.out.println(list.get(k-1));
-        }
-        else{
-            System.out.println(0);
-        }
+        System.out.println(0);
     }
 }
