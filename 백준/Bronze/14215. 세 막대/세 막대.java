@@ -1,21 +1,19 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main{
     public static void main(String[] args){
         Scanner sc= new Scanner(System.in);
         
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
+        int[] arr = {sc.nextInt(), sc.nextInt(), sc.nextInt()};
         
         sc.close();
         
-        int max = Math.max(a,Math.max(b,c));
-        int sum = a+b+c;
+        Arrays.sort(arr);
         
-        if(max >= sum-max){
-            max = sum -max -1;
+        if(arr[2] >= arr[0]+arr[1]){
+            arr[2] = arr[0] + arr[1] -1;
         }
-        System.out.println((sum - Math.max(a,Math.max(b,c))) + max);
+        
+        System.out.println(arr[2] + arr[0] + arr[1]);
     }
 }
