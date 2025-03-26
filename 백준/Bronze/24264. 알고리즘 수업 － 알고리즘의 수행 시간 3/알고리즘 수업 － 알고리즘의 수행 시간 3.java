@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main{
-    public static void main(String[] args){
-         Long n = new Scanner(System.in).nextLong();
+    public static void main(String[] args) throws IOException{
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        System.out.println(n*n);
-        System.out.println(2);
+        long n = Long.parseLong(br.readLine());
+        System.out.println(n*n + "\n2");
     }
 }
