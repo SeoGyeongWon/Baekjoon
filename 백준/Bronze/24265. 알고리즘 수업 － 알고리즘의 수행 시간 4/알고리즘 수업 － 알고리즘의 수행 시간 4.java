@@ -1,10 +1,14 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main{
-    public static void main(String[] args){
-        Long n = new Scanner(System.in).nextLong();
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
-        System.out.println(n*(n-1)/2);
-        System.out.println(2);
+        long n = Long.parseLong(br.readLine());
+        
+        bw.write(n*(n-1)/2 +"\n2");
+        bw.flush();
+        bw.close();
     }
 }
