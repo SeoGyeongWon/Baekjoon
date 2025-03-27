@@ -10,17 +10,26 @@ public class Main{
         int count  =0;
         int num = 666;
         
-        while(true){
-            if(Integer.toString(num).contains("666")){
-               count++;
-                if(count == n){
-                    bw.write(String.valueOf(num));
-                    break;
-                }
+        int result = 0;
+        
+        for(int i =666; count<n;i++){
+            if(contains666(i)){
+                count++;
+                result = i;
             }
-            num++;
         }
+        bw.write(String.valueOf(result));
+        
         bw.flush();
         bw.close();
+    }
+    static boolean contains666(int num){
+        while(num>0){
+           if(num%1000==666) {
+               return true;
+           }
+            num/=10;
+        }
+        return false;
     }
 }
