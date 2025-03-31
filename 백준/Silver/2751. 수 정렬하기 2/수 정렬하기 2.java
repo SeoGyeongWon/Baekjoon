@@ -6,19 +6,22 @@ public class Main{
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
         
+        StringBuilder sb = new StringBuilder();
+        
+        boolean [] arr= new boolean[2000001];
+      
         int n = Integer.parseInt(br.readLine());
         
-        long [] arr= new long[n];
-      
-        for(int i =0; i<arr.length; i++){
-            arr[i] = Long.parseLong(br.readLine());
+        for(int i =0; i<n; i++){
+            arr[Integer.parseInt(br.readLine())+1000000] = true;
         }
         br.close();
         
-        Arrays.sort(arr);
-        StringBuilder sb= new StringBuilder();
-        for(long num : arr){
-            sb.append(num).append("\n");
+        int index = 0;
+        for(boolean b : arr){
+            
+            if(b){sb.append(index-1000000).append("\n");}
+            index++;
         }
         
         bw.write(sb.toString());
