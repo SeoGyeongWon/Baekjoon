@@ -16,9 +16,12 @@ public class Main{
         br.close();
         
         Arrays.sort(arr);
-        for(int i =0;i<arr.length;i++){
-            bw.write((arr[i])+"\n");            
+        StringBuilder sb= new StringBuilder();
+        for(long num : arr){
+            sb.append(num).append("\n");
         }
+        
+        bw.write(sb.toString());
         bw.flush();
         bw.close();
     }
